@@ -248,8 +248,8 @@ const TicTacToe: React.FC = () => {
 
         {/* Game Board */}
         <Card>
-          <CardContent className="p-6">
-            <div className="grid grid-cols-3 gap-3 max-w-md mx-auto">
+          <CardContent className="p-6 flex justify-center">
+            <div className="grid grid-cols-3 gap-2 w-72 h-72">
               {gameState.board.map((cell, index) => (
                 <Button
                   key={index}
@@ -257,7 +257,7 @@ const TicTacToe: React.FC = () => {
                   onClick={() => handleCellClick(index)}
                   disabled={cell !== null || gameState.gameStatus !== 'playing'}
                   className={`
-                    aspect-square rounded-lg
+                    w-full h-full flex items-center justify-center text-4xl font-bold rounded-lg
                     ${cell === 'X' ? 'text-primary' : ''}
                     ${cell === 'O' ? 'text-accent' : ''}
                     ${cell ? 'animate-scale-in' : ''}
